@@ -1,1 +1,2 @@
-# sandbox2.0
+# sandkassaverkefni Davíð B. Þórisson
+-tilraunir, prototypur, demo...
