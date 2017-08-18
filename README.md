@@ -1,2 +1,2 @@
-# sandkassaverkefni Davíð B. Þórisson
+# sandkassaverkefni Davíðs
 -tilraunir, prototypur, demo...
