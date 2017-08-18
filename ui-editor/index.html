@@ -1,0 +1,203 @@
+<!doctype html>
+<html>
+ <head>
+	<title>Enter</title>
+	<meta charset="utf-8" />
+	<script src='https://code.jquery.com/jquery-latest.min.js' type='text/javascript'></script>
+	<script src='editor.js' type='text/javascript'></script>
+	<link rel="stylesheet" href="editor.css" type="text/css">
+	<!--[if IE]><link rel="stylesheet" type="text/css" href="ie.css" /><![endif]-->
+</head>
+<body>
+<div class="ie">Internet Explorer ræður ekki við þetta demo, notið Chrome eða annan nútíma browser!</div>
+<div class="OuterFrame">
+	<div ID='PC' class='Chapter' data-header='Heilsufarssaga'>
+		<h1>hér á að vera titill úr jQuery</h1>
+		<div class='Info'>aðeins helstu sjúkdómar til að gera fljótt list)</div>
+	</div>
+
+	<div ID='HPI' class='Chapter' data-header='Saga'>
+		<h1>---</h1>
+		<div class='Entry' data-type='radio' data-pre='byrjaði'>
+			<h2></h2>
+			<span class='radio neutral'>skyndilega</span>
+			<span class='radio neutral'>hægvaxandi</span>
+		</div>
+		<div class='Entry' data-type='radio' data-pre='versnar við'>
+			<h2></h2>
+			<span class='radio neutral'>áreynslu</span>
+			<span class='radio neutral'>hreyfingu</span>
+			<span class='radio neutral'>innöndun</span>
+		</div>
+		<div class='Entry' data-type='radio' data-pre='batnar við'>
+			<h2></h2>
+			<span class='radio neutral'>hvíld</span>
+			<span class='radio neutral'>liggja á hægri hlið</span>
+			<span class='radio neutral'>liggja á vinstri hlið</span>
+			<span class='radio neutral'>halla sér fram</span>
+		</div>
+		<div class='Entry' data-type='radio' data-pre='karakter'>
+			<h2></h2>
+			<span class='radio neutral'>stingandi</span>
+			<span class='radio neutral'>brennandi</span>
+			<span class='radio neutral'>þrýsting</span>
+			<span class='radio neutral'>þreytandi</span>
+		</div>
+		<div class='Entry' data-type='radio' data-pre='er mestur'>
+			<h2></h2>
+			<span class='radio neutral' data-post='í brjóstkassa'>til vinstri</span>
+			<span class='radio neutral' data-post='í brjóstkassa'>mitt</span>
+			<span class='radio neutral' data-post='í brjóstkassa'>til hægri</span>
+			<span class='radio neutral'>epigastrial svæði</span>
+		</div>
+		<div class='Entry' data-type='radio' data-pre='leiðir'>
+			<h2></h2>
+			<span class='radio neutral'>aftur í bak</span>
+			<span class='radio neutral'>niður í kvið</span>
+			<span class='radio neutral'>upp í háls</span>
+			<span class='radio neutral'>upp í höku</span>
+			<span class='radio neutral'>aftur í hnakka</span>
+		</div>
+		<div class='Entry' data-type='number.range' data-pre='er sem verstur VAS'>
+			<h2></h2>
+			<input type="range" min="1" max="10" value="0"><output></output>
+		</div>
+		<div class='Entry' data-type='number.range' data-pre='er núna VAS'>
+			<h2></h2>
+			<input type="range" min="1" max="10" value="0" /><output></output>
+		</div>
+		<div class='Entry' data-type='number' data-pre='byrjaði fyrir'>
+			<h2></h2>
+			<input type='number' />
+			<span data-type='radio' >
+				<span class='radio neutral'>mínútum</span>
+				<span class='radio neutral'>klukkustundum</span>
+				<span class='radio neutral'>dögum</span>
+				<span class='radio neutral'>vikum</span>
+			</span>
+		</div>
+	</div>
+
+
+	<div id='ROS' class='Chapter' data-header='Kerfalýsing'>
+		<h1>---</h1>
+		<div class='Entry' data-type='radio' data-header='almennt'>
+			<h2></h2>
+			<span class='radio neutral'>hiti</span>
+			<span class='radio neutral'>skjálfti</span>
+			<span class='radio neutral'>þyngdartap</span>
+			<span class='radio neutral'>þreyta</span>
+			<span class='radio neutral'>nætursviti</span>
+		</div>
+		<div class='Entry' data-type='radio' data-header='húð'>
+			<h2></h2>
+			<span class='radio neutral'>útbrot</span>
+			<span class='radio neutral'>kláði</span>
+		</div>
+		<div class='Entry' data-type='radio' data-header='öndunarfæri'>
+			<h2></h2>
+			<span class='radio neutral'>hósti</span>
+			<span class='radio neutral'>hóstað blóði</span>
+			<span class='radio neutral'>mæði</span>
+		</div>
+		<div class='Entry' data-type='radio' data-header='augu'>
+			<h2></h2>
+			<span class='radio neutral'>tvísýni</span>
+			<span class='radio neutral'>ljósfælni</span>
+			<span class='radio neutral'>gröftur</span>
+			<span class='radio neutral'>roði</span>
+		</div>
+		<div class='Entry' data-type='radio' data-header='hjarta- & æðakerfi'>
+			<h2></h2>
+			<span class='radio neutral'>hjartsláttur</span>
+			<span class='radio neutral'>mæði, útafliggjandi</span>
+			<span class='radio neutral'>fótaverkur</span>
+			<span class='radio neutral'>fótabjúgur</span>
+		</div>
+		<div class='Entry' data-type='radio' data-header='meltingarfæri'>
+			<h2></h2>
+			<span class='radio neutral'>brjóstsviði</span>
+			<span class='radio neutral'>ógleði</span>
+			<span class='radio neutral'>uppköst</span>
+			<span class='radio neutral'>þaninn kviður</span>
+			<span class='radio neutral'>kviðverkir</span>
+			<span class='radio neutral'>niðurgangur</span>
+			<span class='radio neutral'>hægðatregða</span>
+			<span class='radio neutral'>blóð með hægðum</span>
+			<span class='radio neutral'>dökkar hægðir</span>
+		</div>
+		<div class='Entry' data-type='radio' data-header='taugakerfi'>
+			<h2></h2>
+			<span class='radio neutral'>svimi</span>
+			<span class='radio neutral'>dofi útlimum</span>
+		</div>
+		<div class='Entry' data-type='radio' data-header='þvagvegir'>
+			<h2></h2>
+			<span class='radio neutral'>særindi við þvaglát</span>
+			<span class='radio neutral'>aukin tíðni</span>
+			<span class='radio neutral'>þrýstingstilfinning</span>
+			<span class='radio neutral'>lykt af þvagi</span>
+			<span class='radio neutral'>blóð í þvagi</span>
+		</div>
+		<div class='Entry' data-type='radio' data-header='bein og vöðvar'>
+			<h2></h2>
+			<span class='radio neutral'>verkur í baki</span>
+			<span class='radio neutral'>verkur í háls</span>
+			<span class='radio neutral'>verkur í mjöðm</span>
+			<span class='radio neutral'>verkur í hné</span>
+			<span class='radio neutral'>verkur í öxl</span>
+			<span class='radio neutral'>verkur í olnboga</span>
+			<span class='radio neutral'>verkur í úlnlið</span>
+			<span class='radio neutral'>verkur í fingrum</span>
+			<span class='radio neutral'>liðverkir</span>
+		</div>
+		<div class='Entry' data-type='radio' data-header='geð'>
+			<h2></h2>
+			<span class='radio neutral'>leiði</span>
+			<span class='radio neutral'>kvíði</span>
+			<span class='radio neutral'>orkuleysi</span>
+			<span class='radio neutral'>tálsýnir</span>
+			<span class='radio neutral'>svefnleysi</span>
+			<span class='radio neutral'>minnisleysi</span>
+		</div>
+	</div>
+
+	<div ID='Examination' class='Chapter' data-header='Skoðun' >
+		<h1>---</h1>
+		<div class='Entry' data-type='radio' data-pre='almennt'>
+			<h2></h2>
+			<span class='radio neutral'>vakandi</span>
+			<span class='radio neutral'>skýr</span>
+			<span class='radio neutral'>ekki bráðveikindalegur að sjá</span>
+			<span class='radio neutral'>húðlitur eðlilegur</span>
+		</div>
+		<div class='Entry' data-type='radio' data-pre='hjarta'>
+			<h2></h2>
+			<span class='radio neutral'>hjartatónar</span>
+			<span class='radio neutral'>aukahljóð</span>
+			<span class='radio neutral'>hálsvenustasi</span>
+			<span class='radio neutral'>fótabjúgur</span>
+		</div>
+		<div class='Entry' data-type='radio' data-pre='öndunarfæri'>
+			<h2></h2>
+			<h3>almennt</h3>
+			öndunarmynstur <span class='radio neutral' data-values='öndun eðlileg;öndun hröð;öndun hæg;cheyne-stokes öndun' data-index='0'></span>
+			aukahljóð heyrast <span class='radio neutral' data-values='hryglir við öndun;obstruktiv öndun' data-index='0'></span>
+			<h3>hlustun (auskultation)</h3>
+			<span class='radio neutral' data-values='obstruktiv;'></span>
+		</div>
+	</div>
+	<div id='Various' class='Chapter' data-header='Flýtitextar' >
+		<h1></h1>
+		<input type="checkbox" /><span>Sjúklingur útskrifast heim.</span>
+		<input type="checkbox" /><span>Sjúklingur leggst inn á deild.</span>
+		<input type="checkbox" /><span>Sjúklingur leggst inn á deild.</span>
+		<input type="checkbox" /><span>Sjúkling er sagt að leita aftur við versnun.</span>
+	</div>
+
+	<div id='Final'>
+		<textarea readonly='readonly'></textarea>
+	</div>
+</div>
+</body>
+</html>

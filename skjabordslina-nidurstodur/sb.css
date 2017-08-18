@@ -1,0 +1,115 @@
+h1 {margin-bottom:0.2em; font-size:22px;}
+h1+div {margin-bottom:1.2em; font-size:0.8em; color:#666;}
+h2 {margin-top:2em; margin-bottom:0.4em}
+#Selectors {font-size:13px;}
+#Selectors > div {margin:0.3em 0 0 0; border:1px solid #ccc; background:#efefef;}
+#Selectors > div > span {display:inline-block; font-weight:bold; width:380px;}
+
+#SBline
+{
+    width:80%;
+	border:1px solid gray;
+    margin:0 auto;
+	margin-top:2em;
+}
+#SBline > * {margin-left:4em;}
+#SB_Name
+{
+	margin-right:2em;
+	font-weight:bold;
+}
+#SB_Menu
+{
+	margin-right:4em;
+}
+
+.select2-container
+{
+	font-size: 0.85em;
+}
+.select2-results__option
+{
+	padding:1px;
+}
+
+
+#StatusSummary
+{
+	margin-left:2em;
+	display:-webkit-inline-box;
+}
+#SBline.MenuGraphical #StatusSummary div > span {display:none;}
+#SBline.MenuTextual #StatusSummary  div > img {display:none;}
+
+#StatusSummary > div
+{
+	width:24px;
+	height:24px;
+	border:1px solid #999;
+	border-bottom:5px solid #ccc;
+	font-size:18px;
+	font-weight:bold;
+	text-align:center;
+	padding:0;
+	margin:0;
+	display:flex;
+	margin-right:2px;
+}
+#StatusSummary > div > img
+{
+	width:18px;
+	height:18px;
+	margin:0;
+	padding:0;
+	padding-left:2px;
+	padding-top:2px;
+	position:relative;
+/*	top:-4px; */
+}
+#StatusSummary > div > span
+{
+	padding:4px;
+}
+
+
+#StatusSummary > div[data-request='Sent'] {border-color:#074CDC}
+#StatusSummary > div[data-request='Answered'] {border-color:#ffa500}
+#StatusSummary > div[data-request='Confirmed']
+{
+	background-color:#999;
+}
+/*#StatusSummary > div[data-request='Confirmed']::before
+{
+	content: "\2713 ";
+	position:relative;
+	font-size:1.2em;
+	top:-6px;
+	color:#0f0;
+	text-shadow: 1px 1px 2px #000;
+}*/
+#StatusSummary > div[data-request='Confirmed'] > img {position:relative; top:-38px; opacity:0.4;}
+
+
+#StatusSummary > div[data-result='Received'] {background-color:#00bdf5;}
+#StatusSummary > div[data-result='assigned']
+{
+	height:0;
+	width:0;
+	border-left:0;
+	border-bottom:0;
+	border-top:24px solid #00bdf5;
+	border-right:24px solid #ffa500;
+}
+#StatusSummary > div[data-result='assigned'] > img {position:relative; top:-26px; left: 4px}
+#StatusSummary > div[data-result='Done'] {background-color:#ffa500}
+#StatusSummary > div[data-result='partialAnswer']
+{
+	height:0px;
+	width:0px;
+	border-left:0;
+	border-bottom:0;
+	border-top:24px solid #ffa500;
+	border-right:24px solid #0f0;
+}
+#StatusSummary > div[data-result='partialAnswer'] > img {position:relative; top:-26px; left: 4px}
+#StatusSummary > div[data-result='FinalAnswer'] {background-color:#0f0}

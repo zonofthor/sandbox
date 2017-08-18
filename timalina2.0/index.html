@@ -1,0 +1,289 @@
+<!doctype html>
+<html>
+
+	<head>
+		<title>Tímalína útfærsla</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="tl.css" type="text/css">
+		<!-- <link rel="stylesheet" href="/jquery-ui/jquery-ui.min.css"> -->
+		<script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+		<script src="tl.js" type="text/javascript"></script>
+		<!-- <script src="/jquery-ui/jquery-ui.min.js"></script> -->
+	</head>
+	<body class="PeriodFilter" data-scroller-last="pos">
+		<img id="HG_Haus" src="HG-haus.jpg" usemap="#HG_Haus">
+		<map name="HG_Haus">
+			<area id="AllarAdgerdir2" title="Aðgerðarvalmynd" shape="rect" coords="1,4,36,42" />
+			<area id="PatientInfo" title="Info sjúklingur" shape="rect" coords="326,1,496,42" />
+		</map>
+		<div id="Header">
+			<div id="Skjabordslina">
+				<span id="sb_stadsetning" class="Indicator" title="Staðsetning sjúklings bæði deild og stofu">Fv-G2 | A:11</span>
+				<span id="sb_vitals" class="Action" title="Seinustu lífsmörk og hægt að breyta CPOE um tíðni lífsmarkamælinga. Smella til að opna allar lífsmarkamælingar og skráningarglugga."><span>H4</span> 125/90 p75 T36.5'</span>
+				<span id="sb_sbar" class="Action" title="SBAR - Smella til að opna seinustu skráningu, sýnir annars klst frá seinustu og upphafsstafi notanda">11:ESE</span>
+				<span id="sb_background" class="Action" title="[væntanlegur] Heilsufarssaga, félagssaga, venjur, ættarsaga, lyfjasaga... svipað konsept og SBAR nema aðrar upplýsingar">Bakgrunnsuppl.</span>
+				<span id="sb_memo" class="Action" title="Persónulegur minnispunktur starfsmanns, sýnir [...] ef til skráning annars tómt">...</span>
+				<span id="sb_results" class="Action" title="Rannsóknarkubbar eins og á skjáborði"><span>X</span><span>B</span><span>S</span><span>O</span></span>
+				<span id="sb_cpoe" class="Action" title="CPOE - rafræn fyrirmæli; sýnir núverandi stöðu, smella til að opna CPOE glugga">Í vinnslu (6)</span>
+				<span id="sb_drugs" class="Action" title="Lyfjakubbur- væntanlegur.">(Lyfjastaða)</span>
+				<span id="sb_doctor1" class="Indicator" title="Ábyrgur sérfræðingur, smella til að senda skilaboð">Óskar Einarsson<span class="SendMessage">S</span></span>
+				<span id="sb_doctor2" class="Indicator" title="Meðferðar-læknir">Elías S. Eyþórsson<span class="SendMessage">S</span></span>
+				<span id="sb_doctor3" class="Indicator" title="Meðferðar-hjúkrunarfræðingur">Gunnhildur Peiser<span class="SendMessage">S</span></span>
+				<span id="sb_patientchat" class="Action" title="Væntanlegt">Spjallrás sjúklings (8)</span>
+			</div>
+			<div id="DataPeriod">
+				<div id="ModeSwitch">
+					<img src="Gogn.png" class="Active" data-view="gogn" />
+					<img src="Stats.png" data-view="graf" />
+				</div>
+				<span id="WarningPeriod">30d</span>
+				<img id="TimeGraph" src="Timegraph30d.jpg" />
+			</div>
+		</div>
+		<div id="LeftColumn">
+			<img id="AllarAdgerdir" src="AllarAdgerdir.jpg" alt="" />
+			<div id="Search" class="LC_Component">
+				<input id="InputSearch" type="search" placeholder="leitarstrengur">
+				<span id="SearchInfo" class="Action Counter">6</span>
+			</div>
+			<div id="divLotur" class="LC_Component">
+				<select id="Lotur" class="SelectFilter">
+					<option value="">Legur og ferli</option>
+					<option class="Lega">jan 2017 Meðganga og fæðing</option>
+					<option class="Lega">jan 2017 Gestur á sjúkrahóteli</option>
+					<option class="Ferli">okt 2016 Göngudeild geðsviðs Hvítabandi (Sk37)</option>
+					<option class="Lega">maí 2016 Barnalækningar</option>
+					<option class="Lega">nóv 2015 Lungnalækningar</option>
+					<option class="Lega">okt 2015 Taugalækningar</option>
+					<option class="Ferli">ágú 2014 Bráðamóttaka (Fv-G2/G)</option>
+					<option class="Ferli">feb 2013 Göngudeild húð- og kynsjúkdóma (Fv-A1)</option>
+					<option class="Ferli">jan 2013 Móttaka speglunar (Hb-11D/13F)</option>
+					<option class="Ferli">des 2012 Dag- og göngudeild augnlækninga (Ei37-1h)</option>
+					<option class="Lega">sep 2011 Almennar lyflækningar</option>
+				</select>
+				<img class="ClearFilter" src="https://cdn4.iconfinder.com/data/icons/android-11/512/close_clear-64.png" />
+			</div>
+			<div id="divStaff" class="LC_Component">
+				<select id="Staff" class="SelectFilter">
+					<option value="" selected="">Starfsmenn</option>
+					<option data-count="2">Andri Jón Heide</option>
+					<option data-count="3">Bergur Stefánsson</option>
+					<option data-count="1">Bára Dís Lúðvíksdóttir</option>
+					<option data-count="4">Gunnar Andrésson</option>
+					<option data-count="2">Haukur Heiðar Hauksson</option><option>Jan Hansel</option>
+					<option data-count="5">Ásgeir Haraldsson</option>
+				</select>
+                <img class="ClearFilter" src="https://cdn4.iconfinder.com/data/icons/android-11/512/close_clear-64.png" />
+			</div>
+			<div id="divExternal" class="LC_Component">
+				<select id="External">
+					<option value="">Ytri gögn - 17d</option>
+					<option value="GLAESIBAER" data-count="3">Læknastöðin ehf Glæsibæ - 17 dögum síðan</option>
+					<option value="FSA" data-count="1">Fjórðungssjúkrahúsið á Akureyri - 3 mánuðum síðan</option>
+					<option value="HH1" data-count="2">Heilsugæsla Höfuðborgarsvæðisins - 3 mánuðum síðan</option>
+					<option value="HSS" data-count="1">Heilbrigðisstofnun Suðurnesja - 3 mánuðum síðan</option>
+					<option value="HSAEGILS" data-count="5">Heilbrigðisstofnun Austurlands - Ári síðan</option>
+					<option value="HSU" data-count="1">Heilbrigðistofnun Suðurlands - 2 árum síðan</option>
+					<option value="SHA" data-count="2">Heilbrigðisstofnun Vesturlands - 6 árum síðan</option>
+				</select>
+				<span class="Action Counter">-</span>
+			</div>
+			<div id="divBlodAllt" class="LC_Component">
+				<select id="BlodAllt">
+					<option value="" selected="">Öll blöð</option>
+					<option data-count="1">Aðgerðalýsing 1</option>
+					<option data-count="5">Belgur 5</option>
+					<option data-count="1">Bráðasjúkraskrá 1</option>
+					<option data-count="8">Bréf og greinargerðir 8</option>
+					<option data-count="4">Bréf til sjúklings 4</option>
+					<option data-count="2">Dagnóta næringarfræðings 2</option>
+					<option data-count="12">Dagáll 12</option>
+					<option data-count="3">Göngudeildarskrá 3</option>
+					<option data-count="2">Hjúkrunarbréf 2</option>
+					<option data-count="4">Innlagnarskrá 4</option>
+					<option data-count="3">Komunóta 3</option>
+					<option data-count="7">Meðferðarseðill 7</option>
+					<option data-count="5">Útskriftarnóta 5</option>
+				</select>
+				<img class="ClearFilter" src="https://cdn4.iconfinder.com/data/icons/android-11/512/close_clear-64.png" />
+			</div>
+			<div id="divSergrein" class="LC_Component">
+				<select id="Sergrein" class="SelectFilter">
+					<option value="" selected="">Sérgreinar</option>
+					<option value="Almennar lyflækningar">Almennar lyflækningar</option>
+					<option value="Barnalækningar">Barnalækningar</option>
+					<option value="Bráðalækningar">Bráðalækningar</option>
+					<option value="Lyfjanefnd (Hb-10O)">Lyfjanefnd (Hb-10O)</option>
+					<option value="Lýtalækningar">Lýtalækningar</option>
+					<option value="Meðganga og fæðing">Meðganga og fæðing</option>
+					<option value="Smitsjúkdómadeild (Fv-A7)">Smitsjúkdómadeild (Fv-A7)</option>
+					<option value="Verkjamiðstöð">Verkjamiðstöð</option>
+					<option value="Öldrunarlækningar">Öldrunarlækningar</option>
+				</select>
+				<img class="ClearFilter" src="https://cdn4.iconfinder.com/data/icons/android-11/512/close_clear-64.png" />
+			</div>
+			<div class="LC_Component MinorFilter Blod" id="Blod1">
+				<span class="mfToggler">&nbsp;</span>
+				<span class="mfSelector">Almennt</span>
+				<span class="Action Counter">109</span>
+				<span class="Action PopupTrigger">+</span>
+			</div>
+			<div class="LC_Component MinorFilter Blod" id="Blod2">
+				<span class="mfToggler">&nbsp;</span>
+				<span class="mfSelector">Ráðgjöf</span>
+				<span class="Action Counter">6</span>
+			</div>
+			<div class="LC_Component MinorFilter Blod" id="Blod3">
+				<span class="mfToggler">&nbsp;</span>
+				<span class="mfSelector">Eyðublöð</span>
+				<span class="Action Counter">8</span>
+			</div>
+			<div class="LC_Component MinorFilter Blod" id="Blod4">
+				<span class="mfToggler">&nbsp;</span>
+				<span class="mfSelector">Beiðnir</span>
+				<span class="Action Counter">4</span>
+			</div>
+            <div class="LC_Component MinorFilter Blod" id="mf_Vidhengi">
+				<span class="mfToggler">&nbsp;</span>
+				<span class="mfSelector">Viðhengi</span>
+				<span class="Action Counter">3</span>
+				<span class="Action PopupTrigger">+</span>
+			</div>
+			<div class="LC_Component MinorFilter Blod">
+				<span class="mfToggler">&nbsp;</span>
+				<span class="mfSelector">Hljóðritanir</span>
+				<span class="Action Counter">1</span>
+			</div>
+            <div class="LC_Component MinorFilter Blod" id="Blod_Pinnadar">
+				<span class="mfToggler">&nbsp;</span>
+				<span class="mfSelector">-Pinnaðar nótur-</span>
+				<span class="Action Counter">6</span>
+			</div>
+            <div class="LC_Component MinorFilter Hjukrun">
+				<span class="mfToggler">&nbsp;</span>
+				<span class="mfSelector">Framvinda</span>
+				<span class="Action Counter">16</span>
+			</div>
+			<div class="LC_Component MinorFilter Hjukrun">
+				<span class="mfToggler">&nbsp;</span>
+				<span class="mfSelector">Upplýsingaskrá</span>
+				<span class="Action Counter">4</span>
+			</div>
+			<div class="LC_Component MinorFilter Rannsoknir" id="mf_HRIS">
+				<span class="mfToggler">&nbsp;</span>
+				<span class="mfSelector">Myndrannsókn</span>
+				<span class="Action Counter">4</span>
+				<span class="Action PopupTrigger">+</span>
+			</div>
+			<div class="LC_Component MinorFilter Rannsoknir" id="mf_HROS">
+				<span class="mfToggler">&nbsp;</span>
+				<span class="mfSelector">Blóðmeinarannsókn</span>
+				<span class="Action Counter">7</span>
+				<span class="Action PopupTrigger">+</span>
+			</div>
+			<div class="LC_Component MinorFilter Rannsoknir" id="mf_Cyberlab">
+				<span class="mfToggler">&nbsp;</span>
+				<span class="mfSelector">Sýklarannsókn</span>
+				<span class="Action Counter">2</span>
+				<span class="Action PopupTrigger">+</span>
+			</div>
+			<div class="LC_Component MinorFilter Rannsoknir">
+				<span class="mfToggler">&nbsp;</span>
+				<span class="mfSelector">Meinarannsókn</span>
+				<span class="Action Counter">3</span>
+			</div>
+			<div class="LC_Component MinorFilter Rannsoknir">
+				<span class="mfToggler">&nbsp;</span>
+				<span class="mfSelector">Annað</span>
+				<span class="Action Counter">5</span>
+			</div>
+			<div class="LC_Component MinorFilter Lyf" id="mf_Therapy">
+				<span class="mfToggler">&nbsp;</span>
+				<span class="mfSelector">Lyfjafyrirmæli</span>
+				<span class="Action Counter">5</span>
+				<span class="Action PopupTrigger">+</span>
+			</div>
+			<div class="LC_Component MinorFilter Lyf">
+				<span class="mfToggler">&nbsp;</span>
+				<span class="mfSelector">Lyfjagjafir</span>
+				<span class="Action Counter">6</span>
+			</div>
+			<div class="LC_Component MinorFilter Lyf" id="mf_Lyfsedill">
+				<span class="mfToggler">&nbsp;</span>
+				<span class="mfSelector">Lyfseðlar</span>
+				<span class="Action Counter">23</span>
+				<span class="Action PopupTrigger">+</span>
+			</div>
+			<div class="LC_Component MinorFilter Lyf" id="mf_Lyfjaumsokn">
+				<span class="mfToggler">&nbsp;</span>
+				<span class="mfSelector">Lyfjaumsóknir</span>
+				<span class="Action Counter">1</span>
+				<span class="Action PopupTrigger">+</span>
+			</div>
+			<div class="LC_Component MinorFilter Lyf">
+				<span class="mfToggler">&nbsp;</span>
+				<span class="mfSelector">Bólusetningar</span>
+				<span class="Action Counter">3</span>
+			</div>
+            <div class="LC_Component MinorFilter Lifsmork" id="mf_Vitals">
+                <span class="mfToggler">&nbsp;</span>
+                <span class="mfSelector">Lífsmörk</span>
+                <span class="Action Counter">3</span>
+                <span class="Action PopupTrigger">+</span>
+            </div>
+            <div class="LC_Component MinorFilter Lifsmork">
+				<span class="mfToggler">&nbsp;</span>
+				<span class="mfSelector">Snjókorn</span>
+				<span class="Action Counter">6</span>
+			</div>
+			<!-- <div class="LC_Component MinorFilter Fyrirmaeli" id="mf_CPOE">
+				<span class="mfToggler">&nbsp;</span>
+				<span class="mfSelector">Fyrirmæli</span>
+				<span class="Action Counter">5</span>
+				<span class="Action PopupTrigger">+</span>
+			</div> -->
+			<div class="LC_Component MinorFilter Greiningar" id="mf_Greiningar">
+				<span class="mfToggler">&nbsp;</span>
+				<span class="mfSelector">Greiningar</span>
+				<span class="Action Counter">7</span>
+            <span class="Action Counter" title="Sjá langtímagreiningar">3</span>
+			</div>
+			<div class="LC_Component MinorFilter Greiningar" id="mf_Adgerdir">
+				<span class="mfToggler">&nbsp;</span>
+				<span class="mfSelector">Aðgerðir</span>
+				<span class="Action Counter">6</span>
+            <span class="Action Counter" title="Sjá stærri aðgerðir">2</span>
+			</div>
+			<div class="LC_Component MinorFilter Ihlutir">
+				<span class="mfToggler">&nbsp;</span>
+				<span class="mfSelector">Íhlutir</span>
+				<span class="Action Counter">3</span>
+			</div>
+			<div class="LC_Component MinorFilter Timabokanir" id="mf_Timabokun">
+				<span class="mfToggler">&nbsp;</span>
+				<span class="mfSelector">Tímabókanir</span>
+				<span class="Action Counter">7</span>
+				<span class="Action PopupTrigger">+</span>
+			</div>
+			<div id="divSaveLoadFilters">
+				<span class="Action" title="Sækja sjálfgefnar síur (upprunaleg sía fyrir alla notendur Heilsugáttar)">Sjálfgefin</span>
+				<span class="Action" title="Sækja mína vistaða síu">Mín</span>
+				<span class="Action" title="Vista mína síu">Vista</span>
+			</div>
+		</div>
+		<div id="Body">
+			<div id="uiDialog" draggable="false">
+				<span>[X]</span>
+				<h1>-titill-</h1>
+				<p></p>
+				<img src="Graf.jpg" />
+			</div>
+			<img src="Main.jpg" />
+			<img src="Main.jpg" />
+		</div>
+		<div id="Body_Graf">
+			<img src="Graf.jpg" />
+		</div>
+	</body>
+
+</html>

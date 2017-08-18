@@ -1,0 +1,573 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+    font-size: 14px;
+}
+
+#Header {
+    background: white;
+    height: 82px;
+    position: fixed;
+    padding: 4px;
+    top: 40px;
+    margin-left: calc(248px + 12px);
+    border-bottom: 1px solid #ddd;
+    z-index:99999;
+}
+#LeftColumn {
+    position: fixed;
+    padding-left: 8px;
+    padding-top: 42px;
+    float: left;
+}
+
+#Body {
+    position: relative;
+}
+
+#Body_Graf, #Body {
+    overflow: hidden;
+    padding-top: calc(36px + 108px);
+    z-index: 99;
+}
+
+#Body {
+    margin-left: calc(248px + 12px);
+}
+
+#Body img {
+    max-width: 860px;
+}
+
+#Body_Graf {
+    display: none;
+}
+
+#uiDialog {
+    min-width: 400px;
+    min-height: 250px;
+    max-width: 650px;
+    max-height: 460px;
+    position: fixed;
+    left: 280px;
+    display: none;
+    border: 1px solid #777;
+    box-shadow: 5px 5px 5px #bbb;
+    cursor: pointer;
+    z-index: 999;
+    background: #fff;
+}
+
+#uiDialog:hover>h1 {
+    background-color: #eeeeee;
+}
+
+#uiDialog>h1 {
+    margin: 0;
+    padding: 2px 4px;
+    font-size: 14px;
+    background-color: #ddd;
+    border-bottom: 1px solid #555;
+}
+
+#uiDialog>span {
+    float: right;
+}
+
+#uiDialog>p {
+    background: red;
+    color: yellow;
+    text-shadow: 2px 1px 1px rgba(105, 105, 105, 0.57);
+    /* font-weight: bold; */
+    padding: 2px;
+    font-size: 14px;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 6px;
+}
+
+#uiDialog>p:empty {
+    display: none;
+}
+
+#uiDialog>img {
+    max-width: 640px;
+    max-height: 420px;
+}
+
+
+/* GLOBAL ITEMS */
+
+.Notifier {
+    background: orange;
+    color: white;
+    padding: 12px 4px;
+    font-size: 2.0em;
+    position: fixed;
+    z-index: 99999;
+    width: 100%;
+}
+
+.Action {
+    cursor: pointer;
+    user-select: none;
+}
+
+.Indicator {
+    user-select: none;
+}
+
+@-webkit-keyframes flasher {
+    25% {
+        background-color: orange;
+    }
+    50% {
+        background-color: #85fff8;
+    }
+    95% {
+        background-color: lightblue;
+    }
+}
+
+.browseAnimation {
+    -webkit-animation-name: flasher;
+    -webkit-animation-duration: 250ms;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-out;
+}
+
+
+/* === HEADER ===  */
+
+#HG_Haus {
+    display: block;
+    height: 42px;
+    position: fixed;
+    z-index: 9999;
+}
+
+#Skjabordslina {
+    font-size: 0.90em;
+    text-align: left;
+    margin-bottom: 0.6em;
+    padding: 2px 6px;
+    border-bottom: 1px solid #bbb;
+    border-top: 1px solid #bbb;
+}
+
+#Skjabordslina>span {
+    display: inline-block;
+    margin-right: 5px;
+    padding: 2px 3px;
+}
+
+#sb_stadsetning {
+    display: none !important;
+}
+
+#sb_vitals {
+    background: #ddeded;
+}
+
+#sb_vitals>span {
+    color: red;
+    border: 1px solid #ccc
+}
+
+#sb_background {
+    display: none !important;
+}
+
+#sb_memo {
+    background: #ddeded;
+}
+
+#sb_sbar {
+    background: #ddeded;
+}
+
+#sb_results {}
+
+#sb_results span {
+    margin: 0 1px;
+    padding: 0px 1px;
+    font-weight: bold;
+}
+
+#sb_results span:nth-of-type(1) {
+    background: #5f4;
+}
+
+#sb_results span:nth-of-type(2) {
+    background: #4ef;
+}
+
+#sb_results span:nth-of-type(3) {
+    background: #5f4;
+}
+
+#sb_results span:nth-of-type(4) {
+    background: #ff92ff;
+}
+
+#sb_cpoe {
+    background: orange;
+}
+
+#sb_drugs {
+    display: none !important;
+}
+
+#sb_doctor1 {
+    background: #ddeded;
+}
+
+#sb_doctor2 {
+    background: #ddeded;
+}
+
+#sb_doctor3 {
+    background: #ddeded;
+}
+
+#sb_patientchat {
+    display: none !important;
+}
+
+.SendMessage {
+    cursor: pointer;
+    margin-left: 4px;
+    background: white;
+    border: 1px solid #ddd;
+    padding: 1px !important;
+}
+
+#DataPeriod {
+    /* width: 100%; */
+    text-align: right;
+}
+
+#WarningPeriod {
+    float: left;
+    background: red;
+    font-size: 2.0em;
+    color: yellow;
+    font-weight: bold;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+#TimeGraph {
+    width: 94%;
+    height: 50px;
+    transition: width 0.5s;
+}
+
+body.PeriodFilter #TimeGraph {
+    width: 86%
+}
+
+#ModeSwitch {
+    float: left;
+    margin-right: 6px;
+    display: inline;
+    width: 40px;
+}
+
+#ModeSwitch img {
+    background: white;
+    height: 25px;
+    width: 40px;
+    cursor: pointer;
+}
+
+#ModeSwitch img:hover {
+    background: #ccc;
+}
+
+#ModeSwitch img.Active {
+    background: cyan;
+}
+
+
+/* === BODY  === */
+
+.LC_Component {
+    font-size: 13px;
+    width: 100%;
+}
+
+.LC_Component>select {
+    width: 180px;
+    background-color: #eaeaea;
+    border: 2px solid #fff;
+    border-radius: 4px 0 0 4px;
+}
+
+.Counter {
+    font-size: 0.9em;
+    display: inline-block;
+    text-align: center;
+    width: 26px;
+    background-color: #add8e6;
+    font-weight: normal;
+    padding: 1px 0px;
+    /*box-shadow: 2px 3px 3px #7f7a7f;*/
+}
+
+.Counter:hover {
+    background-color: #def1f7;
+}
+
+.ClearFilter {
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+    display: none;
+}
+
+.Active .ClearFilter {
+    display: inline;
+}
+
+#AllarAdgerdir {
+    height: 22px;
+    cursor: pointer;
+    margin-bottom: 8px;
+}
+
+#Search {
+    margin-bottom: 4px;
+}
+
+#InputSearch {
+    width: 178px;
+    font-size: 1.1em;
+}
+
+#SearchInfo {
+    display: none;
+}
+
+#InputSearch.Active {
+    background: rgba(234, 255, 0, 0.58);
+}
+
+#InputSearch.Active~#SearchInfo {
+    display: inline-block;
+}
+
+body.IsFiltered #Search>input {
+    border: 1px solid orange;
+}
+
+#divLotur>.Counter {
+    display: none;
+}
+
+#LeftColumn .Active>select {
+    background: orange;
+}
+
+#divLotur .Lega {
+    background: transparent;
+    font-weight:bold;
+}
+
+#divLotur .Ferli {
+
+}
+
+#divStaff>.Counter {
+    display: none;
+}
+
+#divBlodAllt>.Counter {
+    display: none;
+}
+
+#divBlodAllt.Active>.Counter {
+    display: inline-block;
+}
+
+#divStaff.Active>.Counter {
+    display: inline-block;
+}
+
+#divExternal {}
+
+#divExternal>.Counter {
+    display: none;
+}
+
+#divExternal.Active>.Counter {
+    display: inline-block;
+}
+
+/*#divBlodAllt>select, #divPinned>select, #divSergrein>select {
+    background: #ba9077;
+    color: #fff;
+}*/
+
+#divSaveLoadFilters span {
+    border: 1px solid #777;
+}
+
+.MinorFilter {
+    user-select: none;
+}
+
+.PopupTrigger {
+    background: #d8e6ad;
+    color: black;
+    width: 16px;
+    display: inline-block;
+    text-align: center;
+}
+
+.MinorFilter {
+    margin-bottom: 2px;
+}
+
+.mfSelector {
+    cursor: pointer;
+}
+
+.mfSelector:hover {
+    background-color: #aee;
+}
+
+.MinorFilter>.Selected {
+    background-color: green
+}
+
+.MinorFilter>.WasOff {}
+
+.mfToggler {
+    width: 22px;
+    display: inline-block;
+    border-radius: 4px 0 0 4px;
+    cursor: pointer;
+    margin-right: 2px;
+}
+
+.mfSelector {
+    width: calc(180px - 22px - 4px - 2px);
+    display: inline-block;
+    /* background: cyan; */
+    padding: 1px 0;
+}
+
+#Blod1>select {
+    width: 24px;
+    height: 18px;
+}
+
+.Blod .mfToggler.on {
+    background-color: rgba(186, 144, 119, 1.0);
+}
+
+.Blod .mfToggler {
+    background-color: rgba(186, 144, 119, 0.3);
+}
+
+.Rannsoknir .mfToggler.on {
+    background-color: rgba(2, 136, 209, 1);
+}
+
+.Rannsoknir .mfToggler {
+    background-color: rgba(2, 136, 209, 0.3);
+}
+
+.Lyf .mfToggler.on {
+    background-color: rgba(76, 175, 80, 1);
+}
+
+.Lyf .mfToggler {
+    background-color: rgba(76, 175, 80, 0.3);
+}
+
+.Fyrirmaeli .mfToggler.on {
+    background-color: rgba(156, 39, 176, 1);
+}
+
+.Fyrirmaeli .mfToggler {
+    background-color: rgba(156, 39, 176, 0.3);
+}
+
+.Greiningar .mfToggler.on {
+    background-color: rgba(96, 125, 139, 1);
+}
+
+.Greiningar .mfToggler {
+    background-color: rgba(96, 125, 139, 0.3);
+}
+
+.Adgerdir .mfToggler.on {
+    background-color: rgba(255, 215, 0, 1);
+}
+
+.Adgerdir .mfToggler {
+    background-color: rgba(255, 215, 0, 0.3);
+}
+
+.Lifsmork .mfToggler.on {
+    background-color: rgba(215, 44, 22, 1);
+}
+
+.Lifsmork .mfToggler {
+    background-color: rgba(215, 44, 22, 0.3);
+}
+
+.Hjukrun .mfToggler.on {
+    background-color: rgba(173, 48, 157, 1);
+}
+
+.Hjukrun .mfToggler {
+    background-color: rgba(0, 255, 255, 0.3);
+}
+
+.Vidhengi .mfToggler.on {
+    background-color: rgba(192, 192, 192, 1);
+}
+
+.Vidhengi .mfToggler {
+    background-color: rgba(192, 192, 192, 0.3);
+}
+
+.Ihlutir .mfToggler.on {
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.Ihlutir .mfToggler {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.Hljodritanir .mfToggler.on {
+    background-color: rgba(255, 192, 203, 1);
+}
+
+.Hljodritanir .mfToggler {
+    background-color: rgba(255, 192, 203, 0.3);
+}
+
+.Timabokanir .mfToggler.on {
+    background-color: rgb(230, 233, 29);
+}
+
+.Timabokanir .mfToggler {
+    background-color: rgba(29, 233, 182, 0.3);
+}
+
+#divSaveLoadFilters {
+    margin: 10px 0 18px 0;
+    border-top: 2px solid #ccc: border-bottom:2px solid #ccc:
+}
+
+#divSaveLoadFilters>select {
+    width: 80px;
+    display: inline;
+    border: 1px solid #aaa;
+    background: white;
+}

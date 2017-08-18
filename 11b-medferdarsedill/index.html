@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="is">
+<head>
+	<meta charset="utf-8">
+	<title>11B rafvæðing göngudeildarþjónustu</title>
+	<!--<link rel="stylesheet" href="ext/select2.css" type="text/css">-->
+	<link rel="stylesheet" href="11b.css">
+	<script src='https://code.jquery.com/jquery-latest.min.js' type='text/javascript'></script>
+	<script src='11b.js' type='text/javascript'></script>
+	<!--<script src='ext/select2.min.js' type='text/javascript'></script>-->
+</head>
+
+<body>
+	<title>Rafvæðing 11B göngudeildarþjónustu - <u>ATH virkar ekki á Internet Explorer</u></title>
+	<div id="Outer">
+		<div id="Wizard">
+			<div id="Protokoll" class="Chapter">
+	 			<h1>Prótókoll</h1>
+				<div class="SubChapter">
+					<input type="text" placeholder="Krabbameins/stuðnings/töflumeðferð" /><br>
+				</div>
+
+				<div class="SubChapter">
+					<div id="Protokoll_Timabokanir" class="Timabokanir">
+						<div class="tb_Row">
+							<span class="tb_Descriptor">Læknir</span>
+							<span>1v</span>
+							<span>2v</span>
+							<span>3v</span>
+							<span>4v</span>
+							<span>5v</span>
+							<span>6v</span>
+							<span>7v</span>
+							<span>8v</span>
+							<span>9v</span>
+							<span>10v</span>
+							<span>11v</span>
+							<span>12v</span>
+						</div>
+						<div class="tb_Row">
+							<span class="tb_Descriptor">Hjfr.</span>
+							<span>1v</span>
+							<span>2v</span>
+							<span>3v</span>
+							<span>4v</span>
+							<span>5v</span>
+							<span>6v</span>
+							<span>7v</span>
+							<span>8v</span>
+							<span>9v</span>
+							<span>10v</span>
+							<span>11v</span>
+							<span>12v</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="SubChapter">
+					Símtal við lækni <input type="date" />
+					...við hjfr. <input type="date" />
+					<span class="Checkers">Fræðsla?</span>
+				</div>
+			</div>
+
+			<div class="Chapter">
+				<h1>Eftirlit</h1>
+				<div class="SubChapter">
+					<div id="Eftirlit_Timabokanir" class="Timabokanir">
+						<div class="tb_Row">
+							<span class="tb_Descriptor">Læknir</span>
+							<span>1m</span>
+							<span>2m</span>
+							<span>3m</span>
+							<span>4m</span>
+							<span>6m</span>
+							<span>1ár</span>
+							<span>5ár</span>
+						</div>
+						<div class="tb_Row">
+							<span class="tb_Descriptor">Hjfr. símtal</span>
+							<span>1m</span>
+							<span>2m</span>
+							<span>3m</span>
+							<span>4m</span>
+							<span>6m</span>
+							<span>1ár</span>
+							<span>5ár</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="SubChapter">
+					<span class="Checkers">Stigun?</span>
+					<span class="Checkers">Eftirliti lokið?</span>
+				</div>
+			</div>
+
+			<div class="Chapter">
+				<h2>Utanaðkomandi þjónustur</h2>
+				<div class="SubChapter">
+					<span class="Checkers">Félagsráðgjafi</span>
+					<span class="Checkers">Næringarfræðingur</span>
+					<span class="Checkers">Sálfræðingur</span>
+					<span class="Checkers">Endurhæfingarteymi</span>
+					<span class="Checkers">Líknarteymi</span>
+					<span class="Checkers">Slökun</span>
+					<span class="Checkers">Ísetning lyfjabrunns</span>
+					<span class="Checkers">PICC lína</span>
+					<span class="Checkers">EKG</span>
+					<span class="Checkers">Hjartaómun</span>
+					<span class="Checkers">Lungnarannsókn</span>
+				</div>
+
+				<div class="SubChapter">
+					<input type="text" placeholder="Annað" />
+				</div>
+
+				<div class="SubChapter">
+					<h2>Blóðrannsóknir</h2>
+					<span class="Checkers">Status, diff</span>
+					<span class="Checkers">Na, K, krea</span>
+					<span class="Checkers">ALAT, ALP, bilirubin, LDH</span>
+					<span class="Checkers">ASAT, GGT</span>
+					<span class="Checkers">Glúkósi</span>
+					<span class="Checkers">Prótein rafdráttur</span>
+					<span class="Checkers">Kappa/lambda fríar k</span>
+				</div>
+				<div class="SubChapter">
+					<input type="text" placeholder="Aðrar rannsóknir" />
+				</div>
+
+				<div class="SubChapter">
+					<h2>Myndgreining</h2>
+					<span class="Checkers">CT heili</span>
+					<span class="Checkers">CT háls</span>
+					<span class="Checkers">CT thorax</span>
+					<span class="Checkers">CT abdomen</span>
+					<span class="Checkers">Segulómun</span>
+					<span class="Checkers">Ómskoðun</span>
+					<span class="Checkers">Beinaskann</span>
+				</div>
+				<div class="SubChapter">
+					<input type="text" placeholder="Rannsóknarspurning" />
+				</div>
+			</div>
+
+
+			<div class="Chapter">
+			<h1>Skilaboð</h1>
+				<textarea id="Skilabod"></textarea>
+			</div>
+
+
+			<div class="Chapter Footer">
+				<button id="Vista">Vista</button>
+			</div>
+		</div>
+
+		<div id="Output">
+			Útkoman úr ofangreindum reitum verða 1) fyrirmæli sem hjfr/ritari tekur upp og merkir við þegar lokið 2) skilaboð á Skjáborði 11B
+		</div>
+	</div>
+</body>
+</html>

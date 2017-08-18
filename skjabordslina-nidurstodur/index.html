@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+ <head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="sb.css" type="text/css">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+	<script src='https://code.jquery.com/jquery-latest.min.js' type='text/javascript'></script>
+	<script src='sb.js' type='text/javascript'></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+</head>
+
+<body>
+	<h1>Rannsóknarkubbar 2.0 og Sjúklingaaðgerðir-valmynd</h1>
+   <button id="butRandomize">rugla reitum</button><button id="butStyle">ikonar/texti</button>
+	<div>
+		<ul>
+			<li>Demo sýnir 1) compact en öflugt menu fyrir allar aðgerðir sjúklings 2) niðurstöðukubba þar sem blandaðar stöður eru táknaðar með litum sem hægt er að blanda saman</li>
+         <li>Fyrir allar rannsóknir eru 3x meginstöður;<span style="background:#00bdf5">1) Undirbúningsstig</span> <span style="background:#ffa500">2) Framkvæmd</span> <span style="background:#0d0">3) Svarað (lokið)</span></li>
+         <li>Staða beiðni er táknuð með litaðri línu undir icon</li>
+         <li>Auk þess nýir kubbar fyrir ráðgjafasvar, umsögn um rannsókn og hjartalínurit</li>
+         <li>Vantar í þetta virkni þar sem klikkað á kubb þá opnast valmynd til að 1) sjá seinustu niðurstöðu 2) sjá allt rannsóknaryfirlit 3) gera nýja beiðni</li>
+		</ul>
+	</div>
+
+	<div id="Selectors">
+		<div class="hros">
+			<span>Hros (blóð- & vökvarannsóknir)</span>
+			<select class="request" id="selTest">
+				<option value="None"></option>
+				<option value="Sent">Vistuð</option>
+				<option value="Answered">Send</option>
+				<option value="Confirmed">Staðfest lokasvar</option>
+			</select>
+			<select class="result">
+				<option value="None"></option>
+				<option value="Received">Sýni móttekið</option>
+				<option value="Done">Framkvæmd</option>
+				<option value="partialAnswer">Hlutasvar</option>
+				<option value="FinalAnswer">Lokasvar</option>
+			</select>
+		</div>
+		<div class="hris">
+			<span>Hros (röntgen)</span>
+			<select class="request">
+				<option value="None"></option>
+				<option value="Sent">Vistuð</option>
+				<option value="Answered">Send</option>
+				<option value="Confirmed">Staðfest lokasvar</option>
+			</select>
+			<select class="result">
+				<option value="None"></option>
+				<option value="Received">Beiðni móttekin</option>
+				<option value="assigned">Tíma úthlutað</option>
+				<option value="Done">Framkvæmd</option>
+				<option value="partialAnswer">Svar dikterað</option>
+				<option value="FinalAnswer">Svar skrifað</option>
+			</select>
+		</div>
+		<div class="cyberlab">
+			<span>Cyberlab (ræktanir, ónæmisfræði)</span>
+			<select class="request">
+				<option value="None"></option>
+				<option value="Sent">Vistuð</option>
+				<option value="Answered">Send</option>
+				<option value="Confirmed">Staðfest lokasvar</option>
+			</select>
+			<select class="result">
+				<option value="None"></option>
+				<option value="Received">Sýni móttekið</option>
+				<option value="Done">Framkvæmd</option>
+				<option value="partialAnswer">Hlutasvar</option>
+				<option value="FinalAnswer">Lokasvar</option>
+			</select>
+		</div>
+		<div class="bloodbank">
+			<span>Blóðbanki</span>
+			<select class="request">
+				<option value="None"></option>
+				<option value="Sent">Vistuð</option>
+				<option value="Answered">Send</option>
+				<option value="Confirmed">Staðfest lokasvar</option>
+			</select>
+			<select class="result">
+				<option value="None"></option>
+				<option value="Received">Sýni móttekið</option>
+				<option value="Done">Framkvæmd</option>
+				<option value="FinalAnswer">Lokasvar</option>
+			</select>
+		</div>
+		<div class="sympathy">
+			<span>Meinafræði</span>
+			<select class="request">
+				<option value="None"></option>
+				<option value="Sent">Vistuð</option>
+				<option value="Answered">Send</option>
+				<option value="Confirmed">Staðfest lokasvar</option>
+			</select>
+			<select class="result">
+				<option value="None"></option>
+				<option value="Received">Sýni móttekið</option>
+				<option value="Done">Framkvæmd</option>
+				<option value="partialAnswer">Hlutasvar</option>
+				<option value="FinalAnswer">Lokasvar</option>
+			</select>
+		</div>
+		<div class="consult">
+			<span>Ráðgjafir</span>
+			<select class="request">
+				<option value="None"></option>
+				<option value="Sent">Vistuð</option>
+				<option value="Answered">Send</option>
+				<option value="Confirmed">Staðfest lokasvar</option>
+			</select>
+			<select class="result">
+				<option value="None"></option>
+				<option value="Received">Beiðni móttekin</option>
+				<option value="Done">Framkvæmd</option>
+				<option value="partialAnswer">Hlutasvar</option>
+				<option value="FinalAnswer">Lokasvar</option>
+			</select>
+		</div>
+		<div class="saga">
+			<span>Umsagnir rannsókna í Sögu-blöðum (speglanir, hjartaómskoðanir)</span>
+			<select class="request">
+				<option value="None"></option>
+				<option value="Sent">Vistuð</option>
+				<option value="Answered">Send</option>
+				<option value="Confirmed">Staðfest lokasvar</option>
+			</select>
+			<select class="result">
+				<option value="None"></option>
+				<option value="Received">Beiðni móttekin</option>
+				<option value="partialAnswer">Hlutasvar</option>
+				<option value="FinalAnswer">Lokasvar</option>
+			</select>
+		</div>
+      <div class="ecg">
+			<span>Hjartalínurit (EKG)</span>
+			<select class="request">
+				<option value="None"></option>
+				<option value="Sent">Vistuð</option>
+				<option value="Answered">Send</option>
+				<option value="Confirmed">Staðfest lokasvar</option>
+			</select>
+			<select class="result">
+				<option value="None"></option>
+				<option value="FinalAnswer">Lokasvar</option>
+			</select>
+		</div>
+	</div>
+
+	<div id="SBline" class="MenuGraphical">
+		<span id="SB_Name">Jón Jónsson '45</span>
+
+		<select id="SB_Menu" class="">
+			<optgroup label="Beiðnir">
+				<option>Vökvarannsókn (HRIS)</option>
+				<option>Myndgreining (HROS)</option>
+				<option>Beiðni um ráðgjöf</option>
+			</optgroup>
+         <optgroup label="Tímalína">
+				<option>Vökvarannsóknir (HROS)</option>
+				<option>Myndgreiningar (HRIS)</option>
+			</optgroup>
+			<optgroup label="Tímalína - filterar">
+				<option>endurlífgunarteymi</option>
+				<option>útskrift sjúklings</option>
+				<option>BMT nýr</option>
+			</optgroup>
+		</select>
+
+		<div id="StatusSummary">
+			<div class="hros"><img src="hros.png" /><span>B</span></div>
+			<div class="hris"><img src="hris.png" /><span>X</span></div>
+			<div class="cyberlab"><img src="cyberlab.png" /><span>S</span></div>
+			<div class="bloodbank"><img src="blood.png"/><span>I</span></div>
+			<div class="sympathy"><img src="hvef.png" /><span>V</span></div>
+			<div class="consult"><img src="consult.png" /><span>R</span></div>
+			<div class="saga"><img src="saga.png" /><span>U</span></div>
+         <div class="ecg"><img src="ecg.png" /><span>E</span></div>
+		</div>
+
+	</div>
+</body>
+</html>
